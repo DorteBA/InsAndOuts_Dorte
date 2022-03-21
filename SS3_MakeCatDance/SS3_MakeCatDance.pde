@@ -6,6 +6,34 @@ void setup() {
 }
 
 void draw() {
+  if (mousePressed){
+    background(183, 254, 255);
+    stroke(255);
+    strokeWeight(8);
+    noFill();
+    
+    for (int i = 0; i < 50; i++) {
+       stroke(random(255));
+       translate(random(width), random(height));
+       scale(random(1.5), random(1.5));
+
+ //draw a smiley face   
+ fill(82, 255, 84);
+ ellipse(150, 230, 100, 200);            
+ fill(10,0,0);
+ ellipse(180, 233, 30, 30);
+ fill(10,0,0);
+ ellipse(120, 233, 30, 30);
+ fill(207, 70, 0);
+ ellipse(120,233,10,20);
+ fill(207, 70, 0);
+ ellipse(180,233,10,20);
+
+ arc(150, 280, 60, 90, 0, PI/1);
+    }
+
+
+  } else {  
   background(159, 168, 218);
   stroke(255);
   strokeWeight(8);
@@ -50,3 +78,4 @@ void draw() {
   
 }
    }
+  }
