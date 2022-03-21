@@ -25,6 +25,11 @@ void draw() {
   img2 = loadImage("sun.png");
   img3 = loadImage("bird.png");
   image(img2, 305,mouseY,94,94);
+   
+   textSize(29);
+fill(0, 408, 612, 816);
+text("What A Wonderful Day!", 48, 40);  // Default depth, no z-value specified
+
       
   //fill(255);
   //ellipse(random(width), random(height), 5, 5);
@@ -32,10 +37,15 @@ void draw() {
   for (int i=0; i<= width; i+= 40) {
     image(img3, i,50,50,40);
   }
+   for (int i=0; i<= width; i+= 20) {
+           fill(0);
+      ellipse(i, height-20,10,10);
+
+   }
 
 for (float i=0; i < width ; i = i + (random(width))) {
     for (float j=0 ; j < height ; j = j + (random(height))) {
       translate(i, j);
       ellipse(-2,-2,6,6);
-  
-    }}}
+      fill(225);
+     }}}
