@@ -1,50 +1,81 @@
-PImage img;
-PImage img2;
-PImage img3;
-int w = width;
-int h = height;
+
+// int for choices
+int rocks=0;
+int papers=0;
+int scissorss =0;
+boolean gameOver=false;
+// Generates random number for computer
+int computer = int(random(1, 4));
+// game state
+boolean gameOn = true;
+
 
 void setup() {
-  size (500, 500);
-  textAlign(CENTER);
-  textSize(36);
+  noFill();
+  size(600,600);
+  
+  // print computers random guess for testing
+  println("Computer Picked: " + computer);
+
 }
 
+
 void draw() {
-  img = loadImage("rock.png");
-  img2 = loadImage("paper.png");
-  img3 = loadImage("scissors.png");
+ 
+  displayGame();
   
-  if (state== "pregame") {
-    pregame();
-  } else if (state== "game") {
-    game();
-  } else if (state== "game over") {
-    gameover();
-  }
-  println(state);
 }
 
 void mousePressed() {
-   if (state== "pregame") {
-    state= "game"();
-  } else if (state== "game over") {
-    state= "pregame"();
-  }
-}
-
-void pregame() {
-  background(0);
-  text("Click to start the game ", width/2, height/2);
-}
-
-void game() {
-  background(0);
-  text("What A Fun Game!!", width/2, height/2);
-  ellipse(mouseX, ellipseY, 100, 100);
-  ellipseY++;
   
-  if (ellipseY>height+50 ) {
-    state="game over";
-    ellipseY=0;
+  if (mouseX >= 50 && mouseX <= 50+100 && mouseY >= 400 && mouseY <= 400+100) {
+    println("You chose Rock." );
+    rocks=1;
+  } else if (mouseX >= 250 && mouseX <= 250+100 && mouseY >= 400 && mouseY <= 400+100) {
+    println("You chose paper.");
+    papers=1;
   }
+  else if (mouseX >= 450 && mouseX <= 450+100 && mouseY >= 400 && mouseY <= 400+100) {
+    println("You chose Paper.");
+    scissorss=1;
+  }
+  // if user draws with computer
+  if (rocks==1 && computer==1) {
+    println("Tie!");
+    endGame();
+  }
+  if (papers==1 && computer==2) {
+    println("Tie!");
+    endGame();
+  }
+  if (scissorss==1 && computer==3) {
+    println("Tie!");
+    endGame();
+  }
+  // if user wins
+  if (rocks==1 && computer==3) {
+    println("Winner!");
+    endGame();
+  }
+  if (papers==1 && computer==1) {
+    println("Winner!");
+    endGame();
+  }
+  if (scissorss==1 && computer==2) {
+    println("Winner!");
+    endGame();
+  }
+  // if user loses
+  if (rocks==1 && computer==2) {
+    println("You lose! :(");
+    endGame();
+  }
+  if (papers==1 && computer==3) {
+    println("You lose! :(");
+    endGame();
+  }
+  if (scissorss==1 && computer==1) {
+    println("You lose! :(");
+    endGame();
+  }
+}
