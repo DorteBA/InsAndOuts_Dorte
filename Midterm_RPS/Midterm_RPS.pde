@@ -54,28 +54,28 @@ void mousePressed() {
   }
   // if user wins
   if (rocks==1 && computer==3) {
-    println("Winner!");
+    println("Victorious!");
     endGame();
   }
   if (papers==1 && computer==1) {
-    println("Winner!");
+    println("Victorious!");
     endGame();
   }
   if (scissorss==1 && computer==2) {
-    println("Winner!");
+    println("Victorious!");
     endGame();
   }
   // if user loses
   if (rocks==1 && computer==2) {
-    println("You lose! :(");
+    println("Defeated! :(");
     endGame();
   }
   if (papers==1 && computer==3) {
-    println("You lose! :(");
+    println("Defeated! :(");
     endGame();
   }
   if (scissorss==1 && computer==1) {
-    println("You lose! :(");
+    println("Defeated! :(");
     endGame();
   }
 }
