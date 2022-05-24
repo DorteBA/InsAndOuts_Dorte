@@ -29,7 +29,7 @@ void setup() {
   String[] portList = Serial.list();
   printArray(portList); // this line prints the port list to the console
   String portName = Serial.list()[4]; //change the number in the [] for the port you need
-  myPort = new Serial(this, "/dev/cu.usbmodem14101", 9600);
+  myPort = new Serial(this, "/dev/cu.usbmodem14401", 9600);
    
  
 }
@@ -41,7 +41,7 @@ void draw() {
   }
 img = loadImage("royal1.jpg");
   // styling the font of text
-  myFont = createFont("JumboRings", 63);
+  myFont = createFont("Arial", 43);
   textFont(myFont);
   textAlign(CENTER);
   //fill(255, 195, 0);
